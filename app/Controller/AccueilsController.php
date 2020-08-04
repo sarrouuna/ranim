@@ -19,7 +19,8 @@ class AccueilsController extends AppController {
             $vente=""; 
             $finance=""; 
             $stat="";
-            
+                        $sttock="";
+
             
             
             $stock=  CakeSession::read('stock');
