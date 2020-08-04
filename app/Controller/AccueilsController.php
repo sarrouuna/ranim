@@ -39,8 +39,7 @@ class AccueilsController extends AppController {
         $finance = "";
         $stat = "";
 
-<<<<<<< HEAD
-=======
+
 /**
  * index method
  *
@@ -53,7 +52,7 @@ class AccueilsController extends AppController {
             $vente=""; 
             $finance=""; 
             $stat="";
-                        $sttock="";
+                        $stttock="";
 
             
             
@@ -74,7 +73,6 @@ class AccueilsController extends AppController {
             //$this->miseajourfacturevente();
            $this->set(compact('liens'));
 	}
->>>>>>> 34c79c09587b16f947821aafe9034afd815313b5
 
 
         $stock = CakeSession::read('stock');
