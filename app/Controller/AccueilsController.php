@@ -39,6 +39,42 @@ class AccueilsController extends AppController {
         $finance = "";
         $stat = "";
 
+<<<<<<< HEAD
+=======
+/**
+ * index method
+ *
+ * @return void
+ */
+	public function index() {
+            $stock="";
+            $parametrage="";
+            $achat="";
+            $vente=""; 
+            $finance=""; 
+            $stat="";
+                        $sttock="";
+
+            
+            
+            $stock=  CakeSession::read('stock');
+            $parametrage=  CakeSession::read('parametrage');
+            $achat=  CakeSession::read('achat');
+            $vente=  CakeSession::read('vente'); 
+            $finance=  CakeSession::read('finance'); 
+            $stat=  CakeSession::read('stat');
+            if(($parametrage=="par")|| ($stock=="stk")||($achat=="ach")||($vente=="vnt")||($finance=="fnc")||($stat=="stat")){
+              //$this->redirect(array('controller' => 'utilisateurs','action' => 'accueil'));
+            }else{
+            $this->redirect(array('controller' => 'utilisateurs','action' => 'login'));    
+            }
+            //$this->stockajouter(9);
+            //$this->stock(4,9);  
+            //$this->miseajourfactureachat();
+            //$this->miseajourfacturevente();
+           $this->set(compact('liens'));
+	}
+>>>>>>> 34c79c09587b16f947821aafe9034afd815313b5
 
 
         $stock = CakeSession::read('stock');
