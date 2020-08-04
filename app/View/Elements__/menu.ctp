@@ -72,10 +72,10 @@ $menu_stat=$menus_stat[0]['lien'];
 <?php //debug($defaultmenu);die; ?>
 <ul class="mainNav" id="divparametrage" 
 <?php if (in_array(strtolower($this->params['controller']), array('personnels','utilisateurs','fonctions','societes','pointdeventes','exercices','workflows','etatworkflows','tracemisejours'))){ ?>
-style="display:yes;background-color:red"    
+style="display:yes;"    
 <?php }else{
 if($defaultmenu=="parametrage"){?> 
-style="display:yes;background-color:red"   
+style="display:yes;"   
 <?php }else{?> 
 style="display:none;"
 <?php } }?>
@@ -167,30 +167,30 @@ foreach($lien_parametrage as $k=>$liens){
        <i class="fa fa-edit"></i> <span>Ordres de travail</span>
     </a>
 </li>
-<?php  } ?>
+<?php } ?>
 <?php if(@$etatworkflow==1){?> 
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>etatworkflows/index">
        <i class="fa fa-edit"></i> <span>Etat d'ordres de travail</span>
     </a>
 </li>
-<?php  } ?>
-<?php if(@$tracemisejour==1){?> 
+<?php } ?>
+<?php  if(@$tracemisejour==1){?> 
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>tracemisejours/indexx">
        <i class="fa fa-edit"></i> <span>Historique utilisateur</span>
     </a>
 </li>
-<?php  } ?>
+<?php   } ?>
 </ul>
 
 
 <ul  class="mainNav" id="divstock" 
 <?php if (in_array(strtolower($this->params['controller']), array('bonecarts','copiestockdepots','productions','fichetechniques','familles','sousfamilles','soussousfamilles','articles','unites','tags','inventaires','depots','homologations','stockdepots','transferts','bonreceptionstocks','bonsortiestocks','etatstockmins','etatfuturcommandes'))){ ?>
-style="display:yes;background-color:gray"    
+style="display:yes;"    
 <?php }else{
 if($defaultmenu=="stock"){?> 
-style="display:yes;background-color:gray"   
+style="display:yes;"   
 <?php }else{?> 
 style="display:none;"
 <?php } }?>     
@@ -311,11 +311,11 @@ foreach($lien_stock as $k=>$liens){
 </li>
  <?php } ?>
 <?php if(@$inventaire==1){?>   
-<li class="">
+<!--<li class="">
     <a class="" href="<?php echo $this->webroot;?>Inventaires/indexparfamille">
      <i><img src="<?php echo $this->webroot;?>assets/images/inventaire.png" alt="" width="15px"/></i> <span>Inventaire/Famille</span>  
     </a>
-</li>
+</li>-->
  <?php } ?>
 <?php if(@$inventaire==1){?>   
 <li class="">
@@ -333,28 +333,28 @@ foreach($lien_stock as $k=>$liens){
 <?php } ?>
 </ul>
 </li>    
-<?php  if(@$stockdepot==1){?>   
+<?php if(@$stockdepot==1){?>   
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>Stockdepots/index">
      <i><img src="<?php echo $this->webroot;?>assets/images/depoticon.png" alt="" width="15px"/></i> <span>Etat de stock</span>  
     </a>
 </li>
  <?php } ?>
-<?php  if(@$stockdepot==1){?>   
+<?php if(@$stockdepot==1){?>   
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>Stockdepots/indexpardepot">
      <i><img src="<?php echo $this->webroot;?>assets/images/depoticon.png" alt="" width="15px"/></i> <span>Etat de stock détaillé</span>  
     </a>
 </li>
  <?php } ?>
-<?php  if(@$etatstockmin==1){?>   
+<?php if(@$etatstockmin==1){?>   
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>etatstockmins/index">
      <i><img src="<?php echo $this->webroot;?>assets/images/depoticon.png" alt="" width="15px"/></i> <span>Etat de stock Min</span>  
     </a>
 </li>
  <?php } ?>
-<?php  if(@$etatfuturcommande==1){?>   
+<?php if(@$etatfuturcommande==1){?>   
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>etatfuturcommandes/index">
      <i><img src="<?php echo $this->webroot;?>assets/images/depoticon.png" alt="" width="15px"/></i> <span>Etat Futur Stock</span>  
@@ -408,10 +408,10 @@ foreach($lien_stock as $k=>$liens){
 
 <ul class="mainNav" id="divachat" 
 <?php if (in_array(strtolower($this->params['controller']), array('etatretenues','reglements','piecereglements','fournisseurs','famillefournisseurs','bonreceptions','factures','commandes','bonentres','relevefournisseurs','importations','namepiecejointes','deviprospects','namesituations','situations','engagementfournisseurs','etatpiecereglements','variationtauxdechanges','traitecredits','factureavoirfrs'))){ ?>
-style="display:yes;background-color:#b1822b"    
+style="display:yes;"    
 <?php }else{
 if($defaultmenu=="achat"){?> 
-style="display:yes;background-color:#b1822b"   
+style="display:yes;"   
 <?php }else{?> 
 style="display:none;"
 <?php } }?>
@@ -486,13 +486,13 @@ foreach($lien_achat as $k=>$liens){
     </a>
 </li> 
 <?php } ?>
-<?php if(@$deviprospect==1){?> 
-<li class="">
-    <a class="" href="<?php echo $this->webroot;?>Deviprospects/index">
-       <i ><img src="<?php echo $this->webroot;?>assets/images/commande.png" alt="" width="15px"/></i> <span>Suggestion Commande</span>
+<?php // if(@$deviprospect==1){?> 
+<!--<li class="">
+    <a class="" href="<?php // echo $this->webroot;?>Deviprospects/index">
+       <i ><img src="<?php // echo $this->webroot;?>assets/images/commande.png" alt="" width="15px"/></i> <span>Suggestion Commande</span>
     </a>
-</li>
-<?php } ?>
+</li>-->
+<?php // } ?>
 <?php if(@$commande==1){?> 
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>Commandes/index">
@@ -515,11 +515,11 @@ foreach($lien_achat as $k=>$liens){
 </li>
 <?php } ?>
 <?php if(@$facture==1){?> 
-<li class="">
+<!--<li class="">
     <a class="" href="<?php echo $this->webroot;?>Factureavoirfrs/index">
        <i ><img src="<?php echo $this->webroot;?>assets/images/facture.jpg" alt="" width="15px"/></i> <span>Factures Avoir</span>
     </a>
-</li>
+</li>-->
 <?php } ?>
 
 <?php if(@$bonreception==1){?> 
@@ -537,7 +537,7 @@ foreach($lien_achat as $k=>$liens){
     </a>
 </li>
 <?php } ?>
-<?php //if(@$piecereglement==1){?> 
+<?php if(@$piecereglement==1){?> 
 <!--<li>
             <a href="#">
                 <i class="fa fa-money"></i>
@@ -563,31 +563,31 @@ foreach($lien_achat as $k=>$liens){
     <a class="" href="<?php echo $this->webroot;?>Piecereglements/index">
         <i class="fa fa-money"></i> <span>Engagement Fournisseur Interne</span>
     </a>
-</li>-->
-<?php //if (@$engagementfournisseur == 1) { ?>
+</li>
+<?php if (@$engagementfournisseur == 1) { ?>
             <li class="">
                 <a class="" href="<?php echo $this->webroot; ?>traitecredits/index">
                     <i ><img src="<?php echo $this->webroot; ?>assets/images/commande.png" alt="" width="15px"/></i> <span>Engagement Credit</span>
                 </a>
             </li>
-<?php  //} ?>
-<!--</ul>
+<?php  } ?>
+</ul>
 </li>-->
-<?php //} ?>
-<?php //if (@$etatretenue == 1) { ?>
+<?php } ?>
+<?php if (@$etatretenue == 1) { ?>
             <li class="">
                 <a class="" href="<?php echo $this->webroot; ?>etatretenues/index">
                     <i ><img src="<?php echo $this->webroot; ?>assets/images/commande.png" alt="" width="15px"/></i> <span>Etat Retenues</span>
                 </a>
             </li>
-<?php  //} ?>
-<?php //if (@$etatretenue == 1) { ?>
+<?php  } ?>
+<?php if (@$etatretenue == 1) { ?>
             <li class="">
                 <a class="" href="<?php echo $this->webroot; ?>variationtauxdechanges/index">
                     <i ><img src="<?php echo $this->webroot; ?>assets/images/commande.png" alt="" width="15px"/></i> <span>Etat Variation Taux De Change</span>
                 </a>
             </li>
-<?php  //} ?>            
+<?php  } ?>            
 <?php if (@$relevefournisseur == 1) { ?>
             <li class="">
                 <a class="" href="<?php echo $this->webroot; ?>Relevefournisseurs/index">
@@ -628,11 +628,11 @@ foreach($lien_achat as $k=>$liens){
 
 
 <ul class="mainNav" id="divvente" 
-<?php if (in_array(strtolower($this->params['controller']), array('affaires','regions','suivicommercials','recouvrements','reglementclients','piecereglementclients','clients','bonlivraisons','factureclients','factureavoirs','commandeclients','devis','bonsortis','familleclients','sousfamilleclients','zones','pays','releves','affectations','etatsoldecommandeclients','etathistoriquearticles','etatligneventes'))){ ?>
-style="display:yes;background-color:green"    
+<?php if (in_array(strtolower($this->params['controller']), array('suivicommercials','recouvrements','reglementclients','piecereglementclients','clients','bonlivraisons','factureclients','factureavoirs','commandeclients','devis','bonsortis','familleclients','sousfamilleclients','zones','pays','releves','affectations','etatsoldecommandeclients','etathistoriquearticles','etatligneventes'))){ ?>
+style="display:yes;"    
 <?php }else{
 if($defaultmenu=="vente"){?> 
-style="display:yes;background-color:green"   
+style="display:yes;"   
 <?php }else{?> 
 style="display:none;"
 <?php } }?>    
@@ -739,27 +739,27 @@ foreach($lien_vente as $k=>$liens){
     
     
     
-    
-<!--<li class="">
+<!--    
+<li class="">
     <a class="" href="<?php echo $this->webroot;?>Clients/index">
         <i ><img src="<?php echo $this->webroot;?>assets/images/client.png" alt="" width="15px"/></i> <span>Client</span>
     </a>
 </li> -->
 
-<?php // if(@$familleclient==1){?> 
+<?php if(@$familleclient==1){?> 
 <!--<li class="">
     <a class="" href="<?php echo $this->webroot;?>Familleclients/index">
         <i><img src="<?php echo $this->webroot;?>assets/images/famille.png" alt="" width="15px"/></i> <span> Famille Client</span>
     </a>
 </li>-->
-<?php // } ?>
-<?php   //if(@$sousfamilleclient==1){?> 
+<?php } ?>
+<?php   if(@$sousfamilleclient==1){?> 
 <!--<li class="">
     <a class="" href="<?php echo $this->webroot;?>Sousfamilleclients/index">
         <i><img src="<?php echo $this->webroot;?>assets/images/famille.png" alt="" width="15px"/></i> <span>Sous Famille Client</span>
     </a>
 </li>-->
-<?php  //} ?>
+<?php  } ?>
 <?php  if((@$pay==1)||(@$zone==1)){?> 
 <li>
             <a href="#">
@@ -799,20 +799,20 @@ foreach($lien_vente as $k=>$liens){
 
 
 
-<?php  //if(@$pay==1){?> 
+<?php  if(@$pay==1){?> 
 <!--<li class="">
     <a class="" href="<?php echo $this->webroot;?>Pays/index">
         <i><img src="<?php echo $this->webroot;?>assets/images/icons/gmap-2.png" alt="" width="15px"/></i> <span>Pays</span>
     </a>
 </li>-->
-<?php // } ?>
-<?php // if(@$zone==1){?> 
+<?php } ?>
+<?php if(@$zone==1){?> 
 <!--<li class="">
     <a class="" href="<?php echo $this->webroot;?>Zones/index">
         <i><img src="<?php echo $this->webroot;?>assets/images/icons/gmap-2.png" alt="" width="15px"/></i> <span>Zone</span>
     </a>
 </li>-->
-<?php  //} ?>
+<?php  } ?>
 
 <?php if(@$devi==1){?> 
 
@@ -832,23 +832,8 @@ foreach($lien_vente as $k=>$liens){
     </a>
 </li>
 <li class="">
-    <a class="" href="<?php echo $this->webroot;?>Affaires/index">
-         <i><img src="<?php echo $this->webroot;?>assets/images/devis.png" alt="" width="15px"/></i> <span>Affaire</span>
-    </a>
-</li>
-<li class="">
     <a class="" href="<?php echo $this->webroot;?>Suivicommercials/index">
          <i><img src="<?php echo $this->webroot;?>assets/images/devis.png" alt="" width="15px"/></i> <span>Suivi Commercial</span>
-    </a>
-</li>
-<li class="">
-    <a class="" href="<?php echo $this->webroot;?>Affaires/indexvisite">
-         <i><img src="<?php echo $this->webroot;?>assets/images/devis.png" alt="" width="15px"/></i> <span>Visite</span>
-    </a>
-</li>
-<li class="">
-    <a class="" href="<?php echo $this->webroot;?>Regions/index">
-         <i><img src="<?php echo $this->webroot;?>assets/images/devis.png" alt="" width="15px"/></i> <span>Régions</span>
     </a>
 </li>
 
@@ -903,15 +888,15 @@ foreach($lien_vente as $k=>$liens){
         <i class="fa fa-edit"></i> <span>Règlements des Impayés</span>
     </a>
 </li>
-<?php //} ?>
-<?php // if(@$affectation==1){?> 
+<?php } ?>
+<?php if(@$affectation==1){?> 
 <!--<li class="">
     <a class="" href="<?php echo $this->webroot;?>Affectations/index">
         <i><img src="<?php echo $this->webroot;?>assets/images/bon.png" alt="" width="15px"/></i> <span>Affectations Reglements</span>
     </a>
 </li>-->
 <?php  } ?>
-<?php //if(@$piecereglementclient==1){?>
+<?php if(@$piecereglementclient==1){?>
 <!--<li>
             <a href="#">
                 <i class="fa fa-money"></i>
@@ -936,7 +921,7 @@ foreach($lien_vente as $k=>$liens){
     </li>
     </ul>
 </li>-->
-<?php //} ?>
+<?php } ?>
 <?php if (@$releve == 1) { ?>
             <li class="">
                 <a class="" href="<?php echo $this->webroot; ?>Releves/index">
@@ -948,11 +933,6 @@ foreach($lien_vente as $k=>$liens){
             <li class="">
                 <a class="" href="<?php echo $this->webroot; ?>Recouvrements/index">
                     <i ><img src="<?php echo $this->webroot; ?>assets/images/commande.png" alt="" width="15px"/></i> <span>Recouvrement client</span>
-                </a>
-            </li>
-            <li class="">
-                <a class="" href="<?php echo $this->webroot; ?>Releves/prevision">
-                    <i ><img src="<?php echo $this->webroot; ?>assets/images/commande.png" alt="" width="15px"/></i> <span>Prévision</span>
                 </a>
             </li>
 <?php  } ?>            
@@ -984,10 +964,10 @@ foreach($lien_vente as $k=>$liens){
 
 <ul class="mainNav" id="divfinance" 
 <?php if (in_array(strtolower($this->params['controller']), array('bordereaus','lignebordereaus','comptes','versements','sortiecaissees','caissees','carnetcheques','alimentations','caisseinternes','retenue','retenuefournisseur','etatvente','etatachat','engagementcomptes'))){ ?>
-style="display:yes;background-color:#077aa7"    
+style="display:yes;"    
 <?php }else{
 if($defaultmenu=="finance"){?> 
-style="display:yes;background-color:#077aa7"   
+style="display:yes;"   
 <?php }else{?> 
 style="display:none;"
 <?php } }?>    
@@ -1101,36 +1081,36 @@ foreach($lien_finance as $k=>$liens){
     </a>
 </li>
 <?php } ?>
-<?php  //if(@$alimentation==1){?> 
-<!--<li class="">
+<?php  if(@$alimentation==1){?> 
+<li class="">
     <a class="" href="<?php echo $this->webroot;?>Alimentations/index">
         <i ><img src="<?php echo $this->webroot;?>assets/images/cheques.jpg" alt="" width="15px"/></i> <span>Alimentation caisse</span>
     </a>
-</li>-->
-<?php   //} ?>
-<?php  //if(@$sortiecaissee==1){?> 
-<!--<li class="">
+</li>
+<?php   } ?>
+<?php  if(@$sortiecaissee==1){?> 
+<li class="">
     <a class="" href="<?php echo $this->webroot;?>Sortiecaissees/index">
         <i><img src="<?php echo $this->webroot;?>assets/images/sortiecaisse.jpg" alt="" width="15px"/></i> <span>Sortie caisse</span>
     </a>
-</li>-->
-<?php   //} ?>
-<?php //if(@$interne==1){?> 
-<!--<li class="">
+</li>
+<?php   } ?>
+<?php if(@$interne==1){?> 
+<li class="">
     <a class="" href="<?php echo $this->webroot;?>Caissees/interne">
         <i><img src="<?php echo $this->webroot;?>assets/images/caisse.png" alt="" width="15px"/></i> <span>Caisse interne</span>
     </a>
-</li>-->
-<?php   //} ?>
+</li>
+<?php   } ?>
 
 
-<?php   //if(@$caisse==1){?> 
-<!--<li class="">
+<?php   if(@$caisse==1){?> 
+<li class="">
     <a class="" href="<?php echo $this->webroot;?>Caissees/index">
         <i><img src="<?php echo $this->webroot;?>assets/images/caisse.png" alt="" width="15px"/></i> <span>Caisse</span>
     </a>
-</li>-->
-<?php   //} ?>
+</li>
+<?php   } ?>
 <?php  if(@$retenue==1){?> 
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>Caissees/retenue">
@@ -1164,10 +1144,10 @@ foreach($lien_finance as $k=>$liens){
 
 <ul class="mainNav" id="divstat" 
 <?php if (in_array(strtolower($this->params['controller']), array('etatclients','etatclientarticles','etatarticles','etatpointdeventes','etatcaarticles','etatcaclientarticles','etatcapersonnels','etatbenefices'))){ ?>
-style="display:yes;background-color:#3F51B5"    
+style="display:yes;"    
 <?php }else{
 if($defaultmenu=="stat"){?> 
-style="display:yes;background-color:#3F51B5"   
+style="display:yes;"   
 <?php }else{?> 
 style="display:none;"
 <?php } }?>     
@@ -1260,14 +1240,14 @@ foreach(@$lien_stat as $k=>$liens){
     </a>
 </li>
  <?php } ?>
-<?php //if(@$etatcapersonnel==1){?>   
+<?php if(@$etatcapersonnel==1){?>   
 
 <li class="">
     <a class="" href="<?php echo $this->webroot;?>Etatbenefices/index">
          <i><img src="<?php echo $this->webroot;?>assets/images/commande.png" alt="" width="15px"/></i></i> <span>Etat B&eacute;n&eacute;fices</span>
     </a>
 </li>
- <?php //} ?>  
+ <?php } ?>  
 </ul>
 
 </section>
